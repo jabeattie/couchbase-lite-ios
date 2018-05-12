@@ -203,9 +203,11 @@ When the application is running on the iOS simulator, you can locate the applica
 
 === CLI tool
 
-The Couchbase Lite `.zip` file available from the
-https://www.couchbase.com/downloads[downloads page] contains a CLI which
-can be used on *.cblite2* files.
+`cblite` is a command-line tool for inspecting and querying Couchbase Lite 2.x databases. To use it, download Couchbase Lite from the https://www.couchbase.com/downloads[downloads page] and navigate to the *Tools* folder.
+
+image:cblite-tool.png[image,,300]
+
+Instructions for various commands are available in *Tools/README.md*.
 
 === Logging
 
@@ -485,6 +487,9 @@ include::{examplesdir}/SampleCodeTest.m[tags=query-where]
 
 http://docs.couchbase.com/mobile/2.0/couchbase-lite-objc/db022/Classes/CBLQueryExpression.html#/Collection%20operators:[Collection
 operators] are useful to check if a given value is present in an array.
+
+===== CONTAINS Operator
+
 The following example uses the `Function.arrayContains` to find
 documents whose `public_likes` array property contain a value equal to
 "Armani Langworth".
@@ -500,7 +505,16 @@ documents whose `public_likes` array property contain a value equal to
 
 [source,objectivec]
 ----
-include::{examplesdir}/SampleCodeTest.m[tags=query-collection-operator]
+include::{examplesdir}/SampleCodeTest.m[tags=query-collection-operator-contains]
+----
+
+===== IN Operator
+
+The `IN` operator is useful when you need to explicitly list out the values to test against. The following example looks for documents whose `first`, `last` or `username` property value equals "Armani".
+
+[source,objectivec]
+----
+include::{examplesdir}/SampleCodeTest.m[tags=query-collection-operator-in]
 ----
 
 ==== Like Operator
@@ -1027,6 +1041,11 @@ include::{examplesdir}/SampleCodeTest.m[tags=certificate-pinning]
 
 This example loads the certificate from the application sandbox, then
 converts it to the appropriate type to configure the replication object.
+
+== Thread Safety
+
+The Couchbase Lite API is thread safe except for calls to mutable objects:
+`MutableDocument`, `MutableDictionary` and `MutableArray`.
 
 == Release Notes
 
