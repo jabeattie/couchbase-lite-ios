@@ -3185,7 +3185,7 @@
 				27E11A5C1BD0646E00D8DB7D /* libCBForest-Interop.dylib */,
 				27FA99F21917FFD000912F96 /* libTokenizer.a */,
 				27B7E10D18F8FE2800044EBA /* libforestdb.a */,
-				2773D0241DF7459B00880394 /* libTokenizer-Interop.dylib */,
+				2773D0241DF7459B00880394 /* libTokenizer.dylib */,
 				2773D0261DF7459B00880394 /* libTokenizer.a */,
 			);
 			name = Products;
@@ -4453,7 +4453,7 @@
 					};
 					27452BB71AB1180800327776 = {
 						CreatedOnToolsVersion = 6.3;
-						DevelopmentTeam = N2Q372V7W2;
+						DevelopmentTeam = 7HYG8NZ2DN;
 					};
 					275315D414ACF0A10065964D = {
 						DevelopmentTeam = N2Q372V7W2;
@@ -4535,7 +4535,7 @@
 			remoteRef = 27571E0718F9060100141BDD /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		2773D0241DF7459B00880394 /* libTokenizer-Interop.dylib */ = {
+		2773D0241DF7459B00880394 /* libTokenizer.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libTokenizer.dylib;
@@ -5968,6 +5968,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 27FFFF151C973FB5001A70FC /* iOS framework_Debug.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				DEVELOPMENT_TEAM = 7HYG8NZ2DN;
 			};
 			name = Debug;
 		};
@@ -5975,6 +5977,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 27FFFF161C973FB5001A70FC /* iOS framework_Release.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				DEVELOPMENT_TEAM = 7HYG8NZ2DN;
 			};
 			name = Release;
 		};
