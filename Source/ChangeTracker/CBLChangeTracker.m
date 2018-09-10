@@ -301,7 +301,7 @@ DefineLogDomain(ChangeTracker);
 
     // If the error may be transient (flaky network, server glitch), retry:
     if (!CBLIsPermanentError(error) && (_continuous || CBLMayBeTransientError(error))) {
-        NSTimeInterval retryDelay = kInitialRetryDelay * (1 << MIN(_retryCount, 16U));
+        NSTimeInterval retryDelay = kInitialRetryDelay * 1; //(1 << MIN(_retryCount, 16U));
         retryDelay = MIN(retryDelay, kMaxRetryDelay);
         ++_retryCount;
         Log(@"%@: Connection error #%d, retrying in %.1f sec: %@",
