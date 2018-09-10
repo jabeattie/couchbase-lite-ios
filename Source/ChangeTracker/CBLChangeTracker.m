@@ -35,7 +35,7 @@ DefineLogDomain(ChangeTracker);
 
 #define kDefaultHeartbeat (1 * 45.0)
 
-#define kInitialRetryDelay 2.0      // Initial retry delay (doubles after every subsequent failure)
+#define kInitialRetryDelay 0.1      // Initial retry delay (doubles after every subsequent failure)
 #define kMaxRetryDelay (10*60.0)    // ...but will never get longer than this
 
 #define kMinTimeout 60.0            // Minimum read timeout value for longpoll and websocket mode
