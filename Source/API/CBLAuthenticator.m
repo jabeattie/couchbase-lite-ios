@@ -69,8 +69,9 @@
 
 + (id<CBLAuthenticator>) SSLClientCertAuthenticatorWithAnonymousIdentity: (NSString*)label {
     SecIdentityRef identity = MYGetOrCreateAnonymousIdentity(label,
-                                                     kMYAnonymousIdentityDefaultExpirationInterval,
-                                                     NULL);
+                                                             kMYAnonymousIdentityDefaultExpirationInterval,
+                                                             NULL,
+                                                             NULL);
     if (!identity)
         return nil;
     return [self SSLClientCertAuthenticatorWithIdentity: identity supportingCerts: nil];

@@ -112,8 +112,9 @@ DefineLogDomain(Listener);
 
 - (BOOL) setAnonymousSSLIdentityWithLabel: (NSString*)label error: (NSError**)outError {
     SecIdentityRef identity = MYGetOrCreateAnonymousIdentity(label,
-                                                     kMYAnonymousIdentityDefaultExpirationInterval,
-                                                     outError);
+                                                             kMYAnonymousIdentityDefaultExpirationInterval,
+                                                             NULL,
+                                                             outError);
     self.SSLIdentity = identity;
     self.SSLExtraCertificates = nil;
     return (identity != NULL);
@@ -126,7 +127,7 @@ DefineLogDomain(Listener);
     SecIdentityCopyCertificate(_SSLIdentity, &cert);
     if (!cert)
         return nil;
-    NSData* digest = MYGetCertificateDigest(cert);
+    NSData* digest = MYGetCertificateDigestSHA1(cert);
     CFRelease(cert);
     return digest;
 }
