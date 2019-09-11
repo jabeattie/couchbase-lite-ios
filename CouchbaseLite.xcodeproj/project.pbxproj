@@ -4476,6 +4476,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -6050,6 +6051,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 27FFFF181C973FB5001A70FC /* iOS library_Debug.xcconfig */;
 			buildSettings = {
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 			};
 			name = Debug;
 		};
@@ -6057,6 +6059,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 27FFFF191C973FB5001A70FC /* iOS library_Release.xcconfig */;
 			buildSettings = {
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 			};
 			name = Release;
 		};
